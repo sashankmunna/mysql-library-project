@@ -1,0 +1,49 @@
+{% extends 'app0/home.html' %}
+
+{% block body_block %}
+{% csrf_token %}
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Books page</title>
+	<link rel="stylesheet" href="{% static "/css/style.css" %}">
+
+</head>
+<center>
+<body>
+	<h1>Books Data</h1>
+	
+<table border="5px" class="table">
+	<thead>
+		<th>Book_Name</th>
+		<th>Author</th>
+		<th>Language</th>
+		<th>Email</th>
+		<th>Genre</th>
+		<th>Sales</th>
+		<th>Update/Delete</th>
+	</thead>
+	{% for i in bdata %}
+	<tr>
+		<td>{{i.Book_Name}}</td>
+		<td>{{i.Author}}</td>
+		<td>{{i.Language}}</td>
+		<td>{{i.Email}}</td>
+		<td>{{i.Genre}}</td>
+		<td>{{i.Sales}}</td>
+		<td><a href="/bupdate/{{i.id}}"><button class="button">Update</button></a> <a href="/bdelete/{{i.id}}"><button class="button">Delete</button></a></td>
+	</tr>
+	{% endfor %}
+</table>
+
+<a href="/bkform"><button class="button">Add New Book</button></a>
+</body>
+</center>
+</html>
+
+{% endblock %}
+

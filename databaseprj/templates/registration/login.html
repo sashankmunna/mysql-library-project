@@ -1,0 +1,40 @@
+{% extends 'app0/home.html' %}
+
+{% block body_block %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form page</title>
+	<style>
+		button	{
+
+
+    text-indent: 9px;
+    margin: 5px;
+    padding: 17px;
+    border-color: lightgray;
+    color: #4b4b4b;
+    cursor: pointer;
+    text-decoration: none;
+    font-style: italic;
+    font-family:  Georgia, serif;
+	box-shadow: inset -1px 3px 8px 5px #a3a3a3, 2px 5px 16px 0px #a2f9fd, 6px 8px 0px -3px rgba(0,0,0,0.1);
+}
+
+	</style>
+</head>
+<body>
+	<center>
+		<h3>Add New Book Here</h3>
+	<form method="POST">
+		{{form.as_p}}
+		{%csrf_token%}
+
+		<button>submit</button>
+
+	</form>
+</center>
+</body>
+</html>
+{% endblock %}

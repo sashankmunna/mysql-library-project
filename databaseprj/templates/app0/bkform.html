@@ -1,0 +1,25 @@
+{% extends 'app0/home.html' %}
+
+{% block body_block %}
+{% csrf_token %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form page</title>
+	<link rel="stylesheet" href="{% static "/css/style.css" %}">
+</head>
+<body>
+	<center>
+		<h3>Add New Book Here</h3>
+	<form method="POST">
+		{{form.as_p}}
+		{%csrf_token%}
+
+		<a class="abutton" href="#"><button class="button">submit</button></a>
+
+	</form>
+</center>
+</body>
+</html>
+{% endblock %}

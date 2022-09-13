@@ -1,0 +1,31 @@
+{% extends 'app0/home.html' %}
+
+{% block body_block %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form page</title>
+	<link rel="stylesheet" href="{% static "/css/style.css" %}">
+
+</head>
+<body>
+	<center>
+		<h3>Add New Book Here</h3>
+	<form method="POST">
+			{% csrf_token %}
+
+			Update_Book_Name <input type="text" name="Book_Name" value="{{bup.Book_Name}}"><br>
+			Update_Author <input type="text" name="Author" value="{{bup.Author}}"><br>
+			Update_Language <input type="text" name="Language" value="{{bup.Language}}"><br>
+			Update_Email <input type="text" name="Email" value="{{bup.Email}}"><br>
+			Update_Genre <input type="text" name="Genre" value="{{bup.Genre}}"><br>
+			Update_Sales <input type="text" name="Sales" value="{{bup.Sales}}"><br>
+
+		<button class="button">submit</button>
+	</form>
+
+</center>
+</body>
+</html>
+{% endblock %}

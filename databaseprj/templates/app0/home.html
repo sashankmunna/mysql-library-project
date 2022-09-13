@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home Page</title>
+	<link rel="stylesheet" href="{% static "/css/style.css" %}">
+</head>
+<body class="body">
+
+	<div>
+		<nav>
+			<ul class="ul">
+				<li class="li"><a class="lia" href="/home">HOME</a></li>
+				<li class="li"><a class="lia" href="/bkdata">BOOKS</a></li>
+				<li class="li"><a class="lia" href="/student">STUDENT</a></li>
+
+				<li class="lir"><a class="lir" href="/accounts/logout">LOGOUT</a></li>
+				
+			</ul>
+		</nav>
+	</div>
+	
+</body>
+
+{% block body_block %}
+<center>
+<h1>Home Page</h1>
+</center>
+<div>
+		<h2>About Books Page:</h2>
+		<p>
+			<ul>
+				<li>For Books page, i give user authentication.</li>
+				<li>To visit Books Page, first we have to login with credentials.</li>
+				<li>In Book page, we can perfrom CRUD(create, retrive, update, delete) operations.</li>
+			</ul>
+		</p>
+	</div>
+	<div>
+		<h2>About Student Page:</h2>
+		<p>
+			<ul>
+				<li>In Student page, we can only read the data of Books.</li>
+				<li>We can't perform any CRUD operations here.</li>
+				
+			</ul>
+		</p>
+	</div>
+	<div>
+		<h2>About Logout Option:</h2>
+		<p>
+			<ul>
+				<li>We can directly perform logout operation here without visiting admin page by clicking on 'LOGOUT' button.</li>
+				
+			</ul>
+		</p>
+	</div>
+{% endblock %}
+</html>
